@@ -32,6 +32,10 @@ inputs:
     description: '[Optional] Username/organization for the destination repository'
     required: false
     default: ''
+  clone-directory:
+    description: '[Optional] where to clone the repo to'
+    required: false
+    default: ''
   target-branch:
     description: >-
       [Optional] set target branch name for the destination repository. Defaults
@@ -59,6 +63,7 @@ runs:
   using: docker
   image: Dockerfile
   args:
+    - '${{ inputs.clone-directory }}'
     - '${{ inputs.source-before-directory }}'
     - '${{ inputs.source-directory }}'
     - '${{ inputs.destination-github-username }}'
