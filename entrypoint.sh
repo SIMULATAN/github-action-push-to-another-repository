@@ -57,6 +57,7 @@ fi
 
 
 CLONE_DIR=$(mktemp -d)
+echo "DESTINATION_CLONED_DIRECTORY=$CLONE_DIR" >> "$GITHUB_ENV"
 
 echo "[+] Git version"
 git --version
